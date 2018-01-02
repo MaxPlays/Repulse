@@ -11,15 +11,15 @@ Download the latest release of the plugin [here](https://github.com/MaxPlays/Rep
 /repulsor ....... Toggle your shield. Permission: Repulsor.Toggle
 
 ## Config ##
-The above-mentioned config file is easy to use. It consists of three major parts: General settings, shield-related settings and strings. I will go through each configurable feature explaining its effects on the plugin.
+The above-mentioned config file is easy to use. It consists of three major parts: General settings, shield-related settings and strings. I will go through each configurable feature explaining its effects on the plugin.  
 
-general.saveOnReload: false by default, enables or disables the storage of the toggle states of the player's shields
+general.saveOnReload: false by default, enables or disables the storage of the toggle states of the player's shields  
 
-shield.strength: 1.5 by default, change the force a player is knocked back with
-shield.radius: 5 by default, change the shield's radius
-shield.ignoreOps: false by default, If true, the shield will ignore all players with the permission repulsor.toggle
+shield.strength: 1.5 by default, change the force a player is knocked back with  
+shield.radius: 5 by default, change the shield's radius  
+shield.ignoreOps: false by default, If true, the shield will ignore all players with the permission repulsor.toggle  
 
-strings.prefix: The prefix of all plugin-related messages
-strings.noperm: The message that is sent to a player when they execute an illegal command
-strings.activate: The message that is sent to a player when they activate their shield
-strings.deactivate: The message that is sent to a player when they deactivate their shield
+strings.prefix: The prefix of all plugin-related messages  
+strings.noperm: The message that is sent to a player when they execute an illegal command  
+strings.activate: The message that is sent to a player when they activate their shield  
+strings.deactivate: The message that is sent to a player when they deactivate their shield  
