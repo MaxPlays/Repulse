@@ -17,9 +17,9 @@
  *
  */
 
-package me.MaxPlays.Repulsor.listeners;
+package me.MaxPlays.Repulse.listeners;
 
-import me.MaxPlays.Repulsor.util.SaveManager;
+import me.MaxPlays.Repulse.util.SaveManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

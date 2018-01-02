@@ -18,7 +18,7 @@
  */
 
 
-package me.MaxPlays.Repulsor.util;
+package me.MaxPlays.Repulse.util;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

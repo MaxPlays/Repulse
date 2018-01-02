@@ -17,9 +17,9 @@
  *
  */
 
-package me.MaxPlays.Repulsor.util;
+package me.MaxPlays.Repulse.util;
 
-import me.MaxPlays.Repulsor.main.Repulsor;
+import me.MaxPlays.Repulse.main.Repulse;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -31,42 +31,42 @@ import java.util.UUID;
 public class SaveManager {
 
     public static void save() {
-        for(Map.Entry<UUID, Integer> e: Repulsor.enabled.entrySet()){
-            Repulsor.sql.update("DELETE FROM players WHERE uuid='" + e.getKey().toString() + "';");
-            Repulsor.sql.update("INSERT INTO players VALUES('" + e.getKey().toString() + "', " + e.getValue() + ");");
+        for(Map.Entry<UUID, Integer> e: Repulse.enabled.entrySet()){
+            Repulse.sql.update("DELETE FROM players WHERE uuid='" + e.getKey().toString() + "';");
+            Repulse.sql.update("INSERT INTO players VALUES('" + e.getKey().toString() + "', " + e.getValue() + ");");
         }
     }
 
     public static void load(Player p){
-        if(!Repulsor.enabled.containsKey(p.getUniqueId())){
-            if(Repulsor.save){
+        if(!Repulse.enabled.containsKey(p.getUniqueId())){
+            if(Repulse.save){
                 new BukkitRunnable() {
                     @Override
                     public void run() {
-                        ResultSet rs = Repulsor.sql.query("SELECT * FROM players WHERE uuid='" + p.getUniqueId().toString() + "';");
+                        ResultSet rs = Repulse.sql.query("SELECT * FROM players WHERE uuid='" + p.getUniqueId().toString() + "';");
                         try {
                             if(rs.next()){
-                                if(p.hasPermission("repulsor.toggle")){
-                                    Repulsor.enabled.put(p.getUniqueId(), rs.getInt("enabled"));
+                                if(p.hasPermission("repulse.toggle")){
+                                    Repulse.enabled.put(p.getUniqueId(), rs.getInt("enabled"));
                                 }else {
-                                    Repulsor.sql.update("DELETE FROM players WHERE uuid='" + p.getUniqueId().toString() + "';");
+                                    Repulse.sql.update("DELETE FROM players WHERE uuid='" + p.getUniqueId().toString() + "';");
                                 }
                             }else{
-                                if(p.hasPermission("repulsor.toggle"))
-                                    Repulsor.enabled.put(p.getUniqueId(), 0);
+                                if(p.hasPermission("repulse.toggle"))
+                                    Repulse.enabled.put(p.getUniqueId(), 0);
                             }
                         } catch (SQLException e1) {
                             e1.printStackTrace();
                         }
                     }
-                }.runTaskAsynchronously(Repulsor.instance);
+                }.runTaskAsynchronously(Repulse.instance);
             }else{
-                if(p.hasPermission("repulsor.toggle"))
-                    Repulsor.enabled.put(p.getUniqueId(), 0);
+                if(p.hasPermission("repulse.toggle"))
+                    Repulse.enabled.put(p.getUniqueId(), 0);
             }
-        }else if(!p.hasPermission("repulsor.toggle")){
-            Repulsor.enabled.remove(p.getUniqueId());
-            Repulsor.enabled.put(p.getUniqueId(), 0);
+        }else if(!p.hasPermission("repulse.toggle")){
+            Repulse.enabled.remove(p.getUniqueId());
+            Repulse.enabled.put(p.getUniqueId(), 0);
         }
     }
 

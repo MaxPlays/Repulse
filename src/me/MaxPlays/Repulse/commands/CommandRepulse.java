@@ -17,38 +17,38 @@
  *
  */
 
-package me.MaxPlays.Repulsor.commands;
+package me.MaxPlays.Repulse.commands;
 
-import me.MaxPlays.Repulsor.main.Repulsor;
+import me.MaxPlays.Repulse.main.Repulse;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandRepulsor implements CommandExecutor{
+public class CommandRepulse implements CommandExecutor{
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if(cmd.getName().equalsIgnoreCase("repulsor") && sender instanceof Player){
+        if(cmd.getName().equalsIgnoreCase("repulse") && sender instanceof Player){
             Player p = (Player) sender;
-            if(p.hasPermission("repulsor.toggle")){
-                if(Repulsor.enabled.containsKey(p.getUniqueId())){
-                    if(Repulsor.enabled.get(p.getUniqueId()) == 0){
-                        Repulsor.enabled.remove(p.getUniqueId());
-                        Repulsor.enabled.put(p.getUniqueId(), 1);
-                        p.sendMessage(Repulsor.activate);
+            if(p.hasPermission("repulse.toggle")){
+                if(Repulse.enabled.containsKey(p.getUniqueId())){
+                    if(Repulse.enabled.get(p.getUniqueId()) == 0){
+                        Repulse.enabled.remove(p.getUniqueId());
+                        Repulse.enabled.put(p.getUniqueId(), 1);
+                        p.sendMessage(Repulse.activate);
                     }else{
-                        Repulsor.enabled.remove(p.getUniqueId());
-                        Repulsor.enabled.put(p.getUniqueId(), 0);
-                        p.sendMessage(Repulsor.deactivate);
+                        Repulse.enabled.remove(p.getUniqueId());
+                        Repulse.enabled.put(p.getUniqueId(), 0);
+                        p.sendMessage(Repulse.deactivate);
                     }
                 }else{
-                    Repulsor.enabled.put(p.getUniqueId(), 1);
-                    p.sendMessage(Repulsor.activate);
+                    Repulse.enabled.put(p.getUniqueId(), 1);
+                    p.sendMessage(Repulse.activate);
                 }
             }else{
-                p.sendMessage(Repulsor.noperm);
+                p.sendMessage(Repulse.noperm);
             }
         }
 

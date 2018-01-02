@@ -1,12 +1,12 @@
-name: Repulsor
+name: Repulse
 version: 1.0.0
 author: Max_Plays
-main: me.MaxPlays.Repulsor.main.Repulsor
+main: me.MaxPlays.Repulse.main.Repulse
 commands:
-  repulsor:
+  repulse:
 
 permissions:
-  repulsor.*:
+  repulse.*:
     description: Everything
     children:
-      repulsor.toggle: true
+      repulse.toggle: true

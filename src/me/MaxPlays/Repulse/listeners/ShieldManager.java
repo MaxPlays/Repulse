@@ -17,9 +17,9 @@
  *
  */
 
-package me.MaxPlays.Repulsor.listeners;
+package me.MaxPlays.Repulse.listeners;
 
-import me.MaxPlays.Repulsor.main.Repulsor;
+import me.MaxPlays.Repulse.main.Repulse;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -35,16 +35,16 @@ public class ShieldManager {
         @Override
         public void run() {
             ArrayList<UUID> list = new ArrayList<>();
-            for(Map.Entry<UUID, Integer> e: Repulsor.enabled.entrySet()){
+            for(Map.Entry<UUID, Integer> e: Repulse.enabled.entrySet()){
                 if(Bukkit.getPlayer(e.getKey()) != null){
                     Player p = Bukkit.getPlayer(e.getKey());
-                    if(p.hasPermission("repulsor.toggle")){
+                    if(p.hasPermission("repulse.toggle")){
                         if(e.getValue() == 1){
                             for(Player pl: Bukkit.getOnlinePlayers()){
-                                if(Repulsor.ignoreOps && pl.hasPermission("repulsor.toggle"))
+                                if(Repulse.ignoreOps && pl.hasPermission("repulse.toggle"))
                                     continue;
-                                if(!p.getName().equals(pl.getName()) && p.getLocation().distance(pl.getLocation()) <= Repulsor.radius){
-                                    Vector v = pl.getLocation().toVector().subtract(p.getLocation().toVector()).normalize().multiply(Repulsor.strength).setY(1);
+                                if(!p.getName().equals(pl.getName()) && p.getLocation().distance(pl.getLocation()) <= Repulse.radius){
+                                    Vector v = pl.getLocation().toVector().subtract(p.getLocation().toVector()).normalize().multiply(Repulse.strength).setY(1);
                                     pl.setVelocity(v);
                                 }
                             }
@@ -56,7 +56,7 @@ public class ShieldManager {
                 }
             }
             for(UUID id: list)
-                Repulsor.enabled.remove(id);
+                Repulse.enabled.remove(id);
         }
     };
 

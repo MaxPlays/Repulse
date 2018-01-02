@@ -17,14 +17,14 @@
  *
  */
 
-package me.MaxPlays.Repulsor.main;
+package me.MaxPlays.Repulse.main;
 
-import me.MaxPlays.Repulsor.commands.CommandRepulsor;
-import me.MaxPlays.Repulsor.listeners.JoinListener;
-import me.MaxPlays.Repulsor.listeners.ShieldManager;
-import me.MaxPlays.Repulsor.util.ConfigLoader;
-import me.MaxPlays.Repulsor.util.SQL;
-import me.MaxPlays.Repulsor.util.SaveManager;
+import me.MaxPlays.Repulse.commands.CommandRepulse;
+import me.MaxPlays.Repulse.listeners.JoinListener;
+import me.MaxPlays.Repulse.listeners.ShieldManager;
+import me.MaxPlays.Repulse.util.ConfigLoader;
+import me.MaxPlays.Repulse.util.SQL;
+import me.MaxPlays.Repulse.util.SaveManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 
-public class Repulsor extends JavaPlugin{
+public class Repulse extends JavaPlugin{
 
     public static String prefix, noperm, activate, deactivate;
     public static double strength, radius;
@@ -43,13 +43,13 @@ public class Repulsor extends JavaPlugin{
     public static HashMap<UUID, Integer> enabled = new HashMap<>();
     public static SQL sql;
 
-    public static Repulsor instance;
+    public static Repulse instance;
 
     public void onEnable(){
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new JoinListener(), this);
 
-        getCommand("repulsor").setExecutor(new CommandRepulsor());
+        getCommand("repulse").setExecutor(new CommandRepulse());
 
         instance = this;
 
