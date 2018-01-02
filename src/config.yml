@@ -1,0 +1,12 @@
+general:
+  saveOnReload: true
+shield:
+  strength: 1.5
+  radius: 5
+  ignoreOps: false
+strings:
+  prefix: "&8[&cRepulsor&8]"
+  activate: "&7You &aactivated &7the repulsive shield"
+  deactivate: "&7You &cdeactivated &7the repulsive shield"
+  noperm: "&cYou don't have permission to do that"
+
