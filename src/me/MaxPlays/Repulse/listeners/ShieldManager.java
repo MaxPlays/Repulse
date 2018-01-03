@@ -44,7 +44,7 @@ public class ShieldManager {
                                 if(Repulse.ignoreOps && pl.hasPermission("repulse.toggle"))
                                     continue;
                                 if(!p.getName().equals(pl.getName()) && p.getLocation().distance(pl.getLocation()) <= Repulse.radius){
-                                    Vector v = pl.getLocation().toVector().subtract(p.getLocation().toVector()).normalize().multiply(Repulse.strength).setY(1);
+                                    Vector v = pl.getLocation().toVector().subtract(p.getLocation().toVector()).normalize().multiply(Repulse.strength).setY(Repulse.yStrength);
                                     pl.setVelocity(v);
                                 }
                             }

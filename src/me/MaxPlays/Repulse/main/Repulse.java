@@ -37,7 +37,7 @@ import java.util.UUID;
 public class Repulse extends JavaPlugin{
 
     public static String prefix, noperm, activate, deactivate;
-    public static double strength, radius;
+    public static double strength, radius, yStrength;
     public static boolean ignoreOps, save;
 
     public static HashMap<UUID, Integer> enabled = new HashMap<>();

@@ -4,6 +4,7 @@ shield:
   strength: 1.5
   radius: 5
   ignoreOps: false
+  yStrength: 0.7
 strings:
   prefix: "&8[&cRepulse&8]"
   activate: "&7You &aactivated &7the repulsing shield"

@@ -18,6 +18,7 @@ general.saveOnReload: false by default, enables or disables the storage of the t
 shield.strength: 1.5 by default, change the force a player is knocked back with  
 shield.radius: 5 by default, change the shield's radius  
 shield.ignoreOps: false by default, If true, the shield will ignore all players with the permission repulse.toggle  
+shield.yStrength: 0.7 by default, changes the force a player is launched into the air with when entering another player's shield area
 
 strings.prefix: The prefix of all plugin-related messages  
 strings.noperm: The message that is sent to a player when they execute an illegal command  

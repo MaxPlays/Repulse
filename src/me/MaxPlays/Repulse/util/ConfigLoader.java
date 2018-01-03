@@ -33,6 +33,7 @@ public class ConfigLoader {
 
         Repulse.strength =  Repulse.instance.getConfig().getDouble("shield.strength");
         Repulse.radius =  Repulse.instance.getConfig().getDouble("shield.radius");
+        Repulse.yStrength = Repulse.instance.getConfig().getDouble("shield.yStrength");
 
         Repulse.prefix = t( Repulse.instance.getConfig().getString("strings.prefix"));
         Repulse.noperm = Repulse.prefix + " " + t( Repulse.instance.getConfig().getString("strings.noperm"));
