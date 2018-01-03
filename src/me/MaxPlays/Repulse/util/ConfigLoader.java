@@ -30,6 +30,7 @@ public class ConfigLoader {
 
         Repulse.save = Repulse.instance.getConfig().getBoolean("general.saveOnReload");
         Repulse.ignoreOps =  Repulse.instance.getConfig().getBoolean("shield.ignoreOps");
+        Repulse.checkUpdates = Repulse.instance.getConfig().getBoolean("general.updateCheckerEnabled");
 
         Repulse.strength =  Repulse.instance.getConfig().getDouble("shield.strength");
         Repulse.radius =  Repulse.instance.getConfig().getDouble("shield.radius");

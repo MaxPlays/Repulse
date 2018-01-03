@@ -22,6 +22,7 @@ package me.MaxPlays.Repulse.main;
 import me.MaxPlays.Repulse.commands.CommandRepulse;
 import me.MaxPlays.Repulse.listeners.JoinListener;
 import me.MaxPlays.Repulse.listeners.ShieldManager;
+import me.MaxPlays.Repulse.updater.UpdateChecker;
 import me.MaxPlays.Repulse.util.ConfigLoader;
 import me.MaxPlays.Repulse.util.SQL;
 import me.MaxPlays.Repulse.util.SaveManager;
@@ -38,7 +39,7 @@ public class Repulse extends JavaPlugin{
 
     public static String prefix, noperm, activate, deactivate;
     public static double strength, radius, yStrength;
-    public static boolean ignoreOps, save;
+    public static boolean ignoreOps, save, checkUpdates;
 
     public static HashMap<UUID, Integer> enabled = new HashMap<>();
     public static SQL sql;
@@ -65,6 +66,18 @@ public class Repulse extends JavaPlugin{
             SaveManager.load(pl);
 
         ShieldManager.run.runTaskTimer(this, 0, 5);
+
+        new UpdateChecker(checkUpdates).check(new UpdateChecker.UpdateCallback() {
+            @Override
+            public void onUpdateFound(String current, String latest, String url) {
+                UpdateChecker.printMessage("Update Found! Installed version: " + current + " - Version available: " + latest + "::Get the latest version at " + url);
+            }
+
+            @Override
+            public void onUpToDate(String current) {
+                UpdateChecker.printMessage("The plugin is up to date (Version " + current + ")");
+            }
+        });
     }
 
     public void onDisable(){

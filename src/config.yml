@@ -1,5 +1,6 @@
 general:
   saveOnReload: true
+  updateCheckerEnabled: true
 shield:
   strength: 1.5
   radius: 5
