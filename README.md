@@ -13,14 +13,15 @@ Download the latest release of the plugin [here](https://github.com/MaxPlays/Rep
 ## Config ##
 The above-mentioned config file is easy to use. It consists of three major parts: General settings, shield-related settings and strings. I will go through each configurable feature explaining its effects on the plugin.  
 
-general.saveOnReload: false by default, enables or disables the storage of the toggle states of the player's shields  
+**general.saveOnReload**: true by default, enables or disables the storage of the toggle states of the player's shields  
+**general.updateCheckerEnabled**: true by default, enables or disables the automatic update checker  
 
-shield.strength: 1.5 by default, change the force a player is knocked back with  
-shield.radius: 5 by default, change the shield's radius  
-shield.ignoreOps: false by default, If true, the shield will ignore all players with the permission repulse.toggle  
-shield.yStrength: 0.7 by default, changes the force a player is launched into the air with when entering another player's shield area
+**shield.strength**: 1.5 by default, change the force a player is knocked back with  
+**shield.radius**: 5 by default, change the shield's radius  
+**shield.ignoreOps**: false by default, If true, the shield will ignore all players with the permission repulse.toggle  
+**shield.yStrength**: 0.7 by default, changes the force a player is launched into the air with when entering another player's shield area
 
-strings.prefix: The prefix of all plugin-related messages  
-strings.noperm: The message that is sent to a player when they execute an illegal command  
-strings.activate: The message that is sent to a player when they activate their shield  
-strings.deactivate: The message that is sent to a player when they deactivate their shield  
+**strings.prefix**: The prefix of all plugin-related messages  
+**strings.noperm**: The message that is sent to a player when they execute an illegal command  
+**strings.activate**: The message that is sent to a player when they activate their shield  
+**strings.deactivate**: The message that is sent to a player when they deactivate their shield  
